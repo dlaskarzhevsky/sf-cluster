@@ -198,7 +198,26 @@
                       },
                       "protocol": "Tcp"
                    }
-                }
+                },
+                {
+                   "name": "LBTraefikManagementRule",
+                   "properties": {
+                      "backendAddressPool": {
+                         "id": "[variables('lbPoolID0')]"
+                      },
+                      "backendPort": "80",
+                      "enableFloatingIP": false,
+                      "frontendIPConfiguration": {
+                         "id": "[variables('lbIPConfig0')]"
+                      },
+                      "frontendPort": "80",
+                      "idleTimeoutInMinutes": 5,
+                      "probe": {
+                         "id": "[variables('lbHttpProbeID0')]"
+                      },
+                      "protocol": "Tcp"
+                   }
+               }
              ],
              "probes": [
                 {
